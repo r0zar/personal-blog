@@ -130,7 +130,7 @@
 <style>
   main {
     text-align: center;
-    max-width: 400px;
+    max-width: 340px;
     margin: 0 auto;
     flex-grow: 1;
   }
