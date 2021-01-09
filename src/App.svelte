@@ -79,7 +79,11 @@
 </nav>
 <main>
   <h1 class="pt-2">Hey, I'm Ross</h1>
-  <p class="py-1">Welcome to my site 👋</p>
+  <p class="py-1">
+    I'm a freelance software developer. I work with cutting-edge software tools
+    and frameworks to build apps that are fast, maintainable and scale like
+    crazy 🔥
+  </p>
   <section class="py-12">
     <div class="container mx-auto lg:w-1/2">
       <div class="flex flex-col">
