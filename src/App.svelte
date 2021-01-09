@@ -36,22 +36,65 @@
 
 <Tailwindcss />
 
+<nav class="bg-white shadow-sm">
+  <div class="md:flex items-center justify-between py-3 px-8 md:px-12">
+    <div class="flex justify-between items-center">
+      <div class="text-2xl font-bold text-gray-800 md:text-3xl">
+        <a href="/">✨</a>
+      </div>
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path
+              class="hidden"
+              d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+            />
+            <path
+              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row hidden md:block -mx-2">
+      <a
+        href="/"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        >Home</a
+      >
+      <a
+        href="#"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        >About</a
+      >
+      <a
+        href="#"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        >Contact</a
+      >
+    </div>
+  </div>
+</nav>
 <main>
-  <h1>hi, i'm ross</h1>
-  <p>Welcome to my site</p>
+  <h1 class="pt-2">Hey, I'm Ross</h1>
+  <p class="py-1">Welcome to my site 👋</p>
   <section class="py-12">
     <div class="container mx-auto lg:w-1/2">
       <div class="flex flex-col">
         {#each postList as post}
           <div class="w-full md:px-4 lg:px-6 py-5">
-            <div class="bg-white hover:shadow-md shadow rounded-lg">
+            <div
+              class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
+            >
               <!-- <div class="rounded-lg rounded-b-none">
                 <img
                   src="{post.feature_image}"
                   alt="{post.title}"
                   class="w-full h-48 object-cover rounded-lg rounded-b-none " />
               </div> -->
-              <div class="px-4 py-4 md:px-10">
+              <a href={post.url} class="px-4 py-4 md:px-10">
                 <h3 class="font-bold text-md">{post.title}</h3>
                 <p class="py-4">
                   {post.excerpt}
@@ -61,7 +104,7 @@
                     {new Date(post.created_at).toLocaleDateString()}
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         {/each}
@@ -83,7 +126,6 @@
 <style>
   main {
     text-align: center;
-    padding: 1em;
     max-width: 320px;
     margin: 0 auto;
     flex-grow: 1;
