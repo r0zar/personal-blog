@@ -5,7 +5,7 @@
   import GhostContentAPI from "@tryghost/content-api";
   const api = new GhostContentAPI({
     url: "http://blog.rossragsdale.com",
-    key: "a57254b24d92ef3ef970931803",
+    key: "b17cb2756c8fc3ec3c0e718842",
     version: "v3",
   });
   let postList = [];
