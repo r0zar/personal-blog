@@ -82,7 +82,7 @@
 <main>
   <div id="max-width" class="mx-auto">
     <div class="w-1/2 mx-auto">
-      <h1 class="pt-2">Hey, I'm Ross</h1>
+      <h1 class="py-2">Hey, I'm Ross</h1>
       <p class="py-1">I'm a freelance software developer 💻️</p>
       <p class="py-1">I work on complex problems to make them simple ✨</p>
     </div>
