@@ -37,84 +37,88 @@
 <Tailwindcss />
 
 <nav>
-  <div class="md:flex items-center justify-between py-3 px-8 md:px-12">
-    <div class="flex justify-between items-center">
-      <div class="text-2xl font-bold text-gray-800 md:text-3xl">
-        <a href="/">✨</a>
+  <div id="max-width" class="mx-auto">
+    <div class="md:flex items-center justify-between py-3 px-8 md:px-12">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-gray-800 md:text-3xl">
+          <a href="/">🚀</a>
+        </div>
+        <div class="md:hidden">
+          <button
+            type="button"
+            class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+              <path
+                class="hidden"
+                d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
+              />
+              <path
+                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="md:hidden">
-        <button
-          type="button"
-          class="block text-gray-800 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
-          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-            <path
-              class="hidden"
-              d="M16.24 14.83a1 1 0 0 1-1.41 1.41L12 13.41l-2.83 2.83a1 1 0 0 1-1.41-1.41L10.59 12 7.76 9.17a1 1 0 0 1 1.41-1.41L12 10.59l2.83-2.83a1 1 0 0 1 1.41 1.41L13.41 12l2.83 2.83z"
-            />
-            <path
-              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-            />
-          </svg>
-        </button>
+      <div class="flex flex-col md:flex-row hidden md:block -mx-2">
+        <a
+          href="/"
+          class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+          >Home</a
+        >
+        <a
+          href="https://blog.rossragsdale.com"
+          class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+          >Blog</a
+        >
+        <a
+          href="https://pointblankdev.com"
+          class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+          >Point Blank Dev</a
+        >
       </div>
-    </div>
-    <div class="flex flex-col md:flex-row hidden md:block -mx-2">
-      <a
-        href="/"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
-        >Home</a
-      >
-      <a
-        href="https://blog.rossragsdale.com"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
-        >Blog</a
-      >
-      <a
-        href="https://pointblankdev.com"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
-        >Point Blank Dev</a
-      >
     </div>
   </div>
 </nav>
 <main>
-  <h1 class="pt-2">Hey, I'm Ross</h1>
-  <p class="py-1">
-    I'm a freelance software developer. I work with cutting-edge software tools
-    and frameworks to build apps that are fast, maintainable and scale like
-    crazy 🔥
-  </p>
-  <section class="py-12">
-    <div class="container mx-auto lg:w-1/2">
-      <div class="flex flex-col">
-        {#each postList as post}
-          <div class="w-full md:px-4 lg:px-6 py-5">
-            <div
-              class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
-            >
-              <!-- <div class="rounded-lg rounded-b-none">
-                <img
-                  src="{post.feature_image}"
-                  alt="{post.title}"
-                  class="w-full h-48 object-cover rounded-lg rounded-b-none " />
-              </div> -->
-              <a href={post.url} class="px-4 py-4 md:px-10">
-                <h3 class="font-bold text-md">{post.title}</h3>
-                <p class="py-4">
-                  {post.excerpt}
-                </p>
-                <div class="flex flex-wrap pt-8">
-                  <div class="w-full text-sm font-medium">
-                    {new Date(post.created_at).toLocaleDateString()}
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        {/each}
-      </div>
+  <div id="max-width" class="mx-auto">
+    <div class="w-1/2 mx-auto">
+      <h1 class="pt-2">Hey, I'm Ross</h1>
+      <p class="py-1">I'm a freelance software developer 💻️</p>
+      <p class="py-1">I work on complex problems to make them simple ✨</p>
     </div>
-  </section>
+    <section class="py-12">
+      <div class="container mx-auto lg:w-1/2">
+        <div class="flex flex-col">
+          {#each postList as post}
+            <div class="w-full md:px-4 lg:px-6 py-5">
+              <div
+                class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
+              >
+                <!-- <div class="rounded-lg rounded-b-none">
+                  <img
+                    src={post.feature_image}
+                    alt={post.title}
+                    class="w-full h-48 object-cover rounded-lg rounded-b-none "
+                  />
+                </div> -->
+                <a href={post.url} class="px-4 py-4 md:px-10">
+                  <h3 class="font-bold text-md">{post.title}</h3>
+                  <p class="py-4">
+                    {post.excerpt}
+                  </p>
+                  <div class="flex flex-wrap pt-8">
+                    <div class="w-full text-sm font-medium">
+                      {new Date(post.created_at).toLocaleDateString()}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          {/each}
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 <footer>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -144,6 +148,9 @@
     font-size: 4em;
     font-weight: 100;
     color: #0099ff;
+  }
+  #max-width {
+    width: 1140px;
   }
 
   @media (min-width: 640px) {
