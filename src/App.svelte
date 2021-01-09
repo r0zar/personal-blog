@@ -4,7 +4,7 @@
   import { onMount } from "svelte";
   import GhostContentAPI from "@tryghost/content-api";
   const api = new GhostContentAPI({
-    url: "http://blog.rossragsdale.com",
+    url: "https://blog.rossragsdale.com",
     key: "b17cb2756c8fc3ec3c0e718842",
     version: "v3",
   });
