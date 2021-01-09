@@ -19,18 +19,15 @@
       console.error(err);
     });
   onMount(() => {
-    const svgPath = document.querySelectorAll(".path");
-    const svgText = anime({
-      targets: svgPath,
-      loop: false,
-      direction: "alternate",
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "easeInOutSine",
-      duration: 700,
-      delay: (el, i) => {
-        return i * 120;
-      },
-    });
+    const svgPath = document.querySelectorAll("svg");
+    // const svgText = anime({
+    //   targets: svgPath,
+    //   easing: "easeInQuad",
+    //   translateY: [300, 0],
+    //   delay: 100,
+    //   endDelay: 100,
+    //   duration: 1000,
+    // });
   });
 </script>
 
@@ -73,6 +70,11 @@
         href="https://pointblankdev.com"
         class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
         >Point Blank Dev</a
+      >
+      <a
+        href="https://soundcloud.com/rozarbeats"
+        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        >Rozar</a
       >
     </div>
   </div>
@@ -119,7 +121,6 @@
 <footer>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path
-      class="path"
       fill="#0099ff"
       fill-opacity="1"
       d="M0,160L48,181.3C96,203,192,245,288,229.3C384,213,480,139,576,106.7C672,75,768,85,864,106.7C960,128,1056,160,1152,192C1248,224,1344,256,1392,272L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
