@@ -78,7 +78,7 @@
   </div>
 </nav>
 <main>
-  <div class="w-1/2 mx-auto">
+  <div class="lg:w-1/2 mx-auto">
     <h1 class="py-2">Hey, I'm Ross</h1>
     <p class="py-1">I'm a freelance software developer 💻️</p>
     <p class="py-1">I work on complex problems to make them simple ✨</p>
@@ -130,7 +130,7 @@
 <style>
   main {
     text-align: center;
-    max-width: 320px;
+    max-width: 400px;
     margin: 0 auto;
     flex-grow: 1;
   }
