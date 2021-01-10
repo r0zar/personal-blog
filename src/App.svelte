@@ -18,17 +18,43 @@
     .catch((err) => {
       console.error(err);
     });
+  let faDiscord;
+  let faTwitter;
+  let faGithub;
+  let faLinkedIn;
+  let faSoundclound;
   onMount(() => {
-    const svgPath = document.querySelectorAll("svg");
-    // const svgText = anime({
-    //   targets: svgPath,
-    //   easing: "easeInQuad",
-    //   translateY: [300, 0],
-    //   delay: 100,
-    //   endDelay: 100,
-    //   duration: 1000,
-    // });
+    faDiscord = document.querySelector(".fa-discord");
+    faDiscord.addEventListener("mouseenter", enterElement, false);
+    faDiscord.addEventListener("mouseleave", leaveElement, false);
+    faTwitter = document.querySelector(".fa-twitter");
+    faTwitter.addEventListener("mouseenter", enterElement, false);
+    faTwitter.addEventListener("mouseleave", leaveElement, false);
+    faGithub = document.querySelector(".fa-github");
+    faGithub.addEventListener("mouseenter", enterElement, false);
+    faGithub.addEventListener("mouseleave", leaveElement, false);
+    faLinkedIn = document.querySelector(".fa-linkedin-in");
+    faLinkedIn.addEventListener("mouseenter", enterElement, false);
+    faLinkedIn.addEventListener("mouseleave", leaveElement, false);
+    faSoundclound = document.querySelector(".fa-soundcloud");
+    faSoundclound.addEventListener("mouseenter", enterElement, false);
+    faSoundclound.addEventListener("mouseleave", leaveElement, false);
   });
+  function animateElement(element, scale, duration, elasticity) {
+    anime.remove(element);
+    anime({
+      targets: element,
+      scale: scale,
+      duration: duration,
+      elasticity: elasticity,
+    });
+  }
+  function enterElement(e) {
+    animateElement(e.target, 2, 800, 400);
+  }
+  function leaveElement(e) {
+    animateElement(e.target, 1, 600, 300);
+  }
 </script>
 
 <Tailwindcss />
@@ -71,19 +97,18 @@
         class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
         >Point Blank Dev</a
       >
-      <a
-        href="https://soundcloud.com/rozarbeats"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
-        >Rozar</a
-      >
     </div>
   </div>
 </nav>
-<main>
-  <div class="lg:w-1/2 mx-auto">
-    <h1 class="py-2">Hey, I'm Ross</h1>
-    <p class="py-1">I'm a freelance software developer 💻️</p>
-    <p class="py-1">I work on complex problems to make them simple ✨</p>
+<main class="text-center lg:max-w-none max-w-sm mx-auto flex-grow px-1">
+  <h1 class="py-3 text-5xl font-thin text-blue-400">Hey, I'm Ross</h1>
+  <div class="lg:w-1/2 mx-auto mt-6 font-extralight">
+    <p>I'm a freelance web developer.</p>
+    <p>I work on complex problems to make them simple.</p>
+    <p class="mt-4">
+      I started Point Blank Dev to help other business owners achieve their
+      goals by building amazing products.
+    </p>
   </div>
   <section class="py-12">
     <div class="container mx-auto lg:w-1/2">
@@ -93,20 +118,13 @@
             <div
               class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
             >
-              <!-- <div class="rounded-lg rounded-b-none">
-                  <img
-                    src={post.feature_image}
-                    alt={post.title}
-                    class="w-full h-48 object-cover rounded-lg rounded-b-none "
-                  />
-                </div> -->
               <a href={post.url} class="px-4 py-4 md:px-10">
-                <h3 class="font-bold text-md">{post.title}</h3>
-                <p class="py-4">
+                <h3 class="font-normal text-md">{post.title}</h3>
+                <p class="py-4 font-thin">
                   {post.excerpt}
                 </p>
                 <div class="flex flex-wrap pt-8">
-                  <div class="w-full text-sm font-medium">
+                  <div class="w-full text-sm font-light">
                     {new Date(post.created_at).toLocaleDateString()}
                   </div>
                 </div>
@@ -119,6 +137,33 @@
   </section>
 </main>
 <footer>
+  <div
+    class="invisible sm:visible absolute sm:bottom-6 mx-auto left-0 right-0 text-center cursor-default"
+  >
+    <a href="https://discord.gg/StNEj3trxt"
+      ><i
+        class="text-gray-200 hover:text-white fab text-xl p-2 fa-discord"
+      /></a
+    >
+    <a href="https://twitter.com/lordrozar"
+      ><i
+        class="text-gray-200 hover:text-white fab text-xl p-2 fa-twitter"
+      /></a
+    >
+    <a href="https://github.com/r0zar"
+      ><i class="text-gray-200 hover:text-white fab text-xl p-2 fa-github" /></a
+    >
+    <a href="https://www.linkedin.com/in/rossragsdale/"
+      ><i
+        class="text-gray-200 hover:text-white fab text-xl p-2 fa-linkedin-in"
+      /></a
+    >
+    <a href="https://soundcloud.com/rozarbeats"
+      ><i
+        class="text-gray-200 hover:text-white fab text-xl p-2 fa-soundcloud"
+      /></a
+    >
+  </div>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path
       fill="#0099ff"
@@ -129,27 +174,5 @@
 </footer>
 
 <style>
-  main {
-    text-align: center;
-    max-width: 340px;
-    margin: 0 auto;
-    flex-grow: 1;
-  }
-
-  footer > svg {
-    bottom: 0;
-    z-index: -1;
-  }
-
-  h1 {
-    font-size: 4em;
-    font-weight: 100;
-    color: #0099ff;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
+  /* none */
 </style>
