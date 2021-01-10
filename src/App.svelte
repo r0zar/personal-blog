@@ -123,7 +123,7 @@
                 <p class="py-4 font-thin">
                   {post.excerpt}
                 </p>
-                <div class="flex flex-wrap pt-8">
+                <div class="flex flex-wrap pt-2">
                   <div class="w-full text-sm font-light">
                     {new Date(post.created_at).toLocaleDateString()}
                   </div>
