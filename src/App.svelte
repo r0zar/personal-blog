@@ -84,17 +84,17 @@
     <div class="flex flex-col md:flex-row hidden md:block -mx-2">
       <a
         href="/"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        class="text-gray-800 rounded hover:bg-gray-600 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
         >Home</a
       >
       <a
         href="https://blog.rossragsdale.com"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        class="text-gray-800 rounded hover:bg-gray-600 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
         >Blog</a
       >
       <a
         href="https://pointblankdev.com"
-        class="text-gray-800 rounded hover:bg-gray-900 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        class="text-gray-800 rounded hover:bg-gray-600 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
         >Point Blank Dev</a
       >
     </div>
