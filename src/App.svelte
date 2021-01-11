@@ -9,11 +9,13 @@
     version: "v3",
   });
   let postList = [];
+  let loaded = false;
   // fetch 5 posts, including related tags and authors
   api.posts
     .browse({ limit: 5, include: "tags,authors" })
     .then((posts) => {
-      postList = posts;
+      postList = [posts[0]];
+      loaded = true;
     })
     .catch((err) => {
       console.error(err);
@@ -101,37 +103,48 @@
   </div>
 </nav>
 <main class="text-center lg:max-w-none max-w-sm mx-auto flex-grow px-1">
-  <h1 class="py-3 text-5xl font-thin text-blue-400">Hey, I'm Ross</h1>
-  <div class="lg:w-1/2 mx-auto mt-6 font-extralight">
+  <h1 class="py-3 text-5xl font-extralight text-blue-400">Hey, I'm Ross</h1>
+  <div class="lg:w-1/2 mx-auto mt-6 font-light">
     <p>I'm a freelance web developer.</p>
     <p>I work on complex problems to make them simple.</p>
     <p class="mt-4">
-      I started Point Blank Dev to help other business owners achieve their
-      goals by building amazing products.
+      I founded Point Blank Dev to help others achieve their goals and building
+      amazing products.
     </p>
   </div>
   <section class="py-12">
+    <h1 class="py-3 text-3xl font-light">Latest blog post</h1>
     <div class="container mx-auto lg:w-1/2">
       <div class="flex flex-col">
-        {#each postList as post}
+        {#if !loaded}
           <div class="w-full md:px-4 lg:px-6 py-5">
             <div
               class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
             >
-              <a href={post.url} class="px-4 py-4 md:px-10">
-                <h3 class="font-normal text-md">{post.title}</h3>
-                <p class="py-4 font-thin">
-                  {post.excerpt}
-                </p>
-                <div class="flex flex-wrap pt-2">
-                  <div class="w-full text-sm font-light">
-                    {new Date(post.created_at).toLocaleDateString()}
-                  </div>
-                </div>
-              </a>
+              <i class="animate-spin fas fa-spinner p-10" />
             </div>
           </div>
-        {/each}
+        {:else}
+          {#each postList as post}
+            <div class="w-full md:px-4 lg:px-6 py-5">
+              <div
+                class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
+              >
+                <a href={post.url} class="px-4 py-4 md:px-10">
+                  <h3 class="font-normal text-md">{post.title}</h3>
+                  <p class="py-4 font-thin">
+                    {post.excerpt}
+                  </p>
+                  <div class="flex flex-wrap pt-2">
+                    <div class="w-full text-sm font-light">
+                      {new Date(post.created_at).toLocaleDateString()}
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          {/each}
+        {/if}
       </div>
     </div>
   </section>
