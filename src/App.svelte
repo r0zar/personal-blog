@@ -25,6 +25,7 @@
   let faGithub;
   let faLinkedIn;
   let faSoundclound;
+  let blurElement;
   onMount(() => {
     faDiscord = document.querySelector(".fa-discord");
     faDiscord.addEventListener("mouseenter", enterElement, false);
@@ -41,6 +42,7 @@
     faSoundclound = document.querySelector(".fa-soundcloud");
     faSoundclound.addEventListener("mouseenter", enterElement, false);
     faSoundclound.addEventListener("mouseleave", leaveElement, false);
+    blurElement = document.querySelector(".blur");
   });
   function animateElement(element, scale, duration, elasticity) {
     anime.remove(element);
@@ -57,6 +59,13 @@
   function leaveElement(e) {
     animateElement(e.target, 1, 600, 300);
   }
+  anime({
+    duration: 500,
+    direction: "reverse",
+    update: function (anim) {
+      blurElement.style.filter = "blur(" + (40 * anim.progress) / 100 + "px)";
+    },
+  });
 </script>
 
 <Tailwindcss />
@@ -104,7 +113,7 @@
 </nav>
 <main class="text-center lg:max-w-none max-w-sm mx-auto flex-grow px-1">
   <h1 class="py-3 text-5xl font-extralight text-blue-400">Hey, I'm Ross</h1>
-  <div class="lg:w-1/2 mx-auto mt-6 font-light">
+  <div class="mx-auto mt-6 font-light">
     <p>I'm a freelance web developer.</p>
     <p>I work on complex problems to make them simple.</p>
     <p class="mt-4">
@@ -115,36 +124,27 @@
   <section class="py-12">
     <h1 class="py-3 text-3xl font-light">Latest blog post</h1>
     <div class="container mx-auto lg:w-1/2">
-      <div class="flex flex-col">
-        {#if !loaded}
+      <div class="flex flex-col blur">
+        {#each postList as post}
           <div class="w-full md:px-4 lg:px-6 py-5">
             <div
               class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
             >
-              <i class="animate-spin fas fa-spinner p-10" />
+              <a href={post.url} class="px-4 py-4 md:px-10">
+                <h3 class="font-normal text-md">{post.title}</h3>
+                <p class="py-4 font-thin">
+                  {post.excerpt}
+                </p>
+                <div class="flex flex-wrap pt-2">
+                  <div class="w-full text-sm font-light">
+                    {new Date(post.created_at).toLocaleDateString()}
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
-        {:else}
-          {#each postList as post}
-            <div class="w-full md:px-4 lg:px-6 py-5">
-              <div
-                class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
-              >
-                <a href={post.url} class="px-4 py-4 md:px-10">
-                  <h3 class="font-normal text-md">{post.title}</h3>
-                  <p class="py-4 font-thin">
-                    {post.excerpt}
-                  </p>
-                  <div class="flex flex-wrap pt-2">
-                    <div class="w-full text-sm font-light">
-                      {new Date(post.created_at).toLocaleDateString()}
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          {/each}
-        {/if}
+        {/each}
+        <!-- {/if} -->
       </div>
     </div>
   </section>
@@ -190,5 +190,7 @@
 </footer>
 
 <style>
+  .blur {
+  }
   /* none */
 </style>
