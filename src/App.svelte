@@ -150,7 +150,7 @@
   </section>
 </main>
 <footer>
-  <svg class="-mb-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path
       fill="#0099ff"
       fill-opacity="1"
@@ -158,29 +158,32 @@
     />
   </svg>
   <div
-    class="invisible sm:visible mb-3 mx-auto left-0 right-0 text-center cursor-default"
+    class="-mt-12 pb-6 lg:pb-12 mx-auto left-0 right-0 text-center cursor-default"
+    style="background: #0099ff"
   >
     <a href="https://discord.gg/StNEj3trxt"
       ><i
-        class="text-gray-200 hover:text-white fab text-xl p-2 fa-discord"
+        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-discord"
       /></a
     >
     <a href="https://twitter.com/lordrozar"
       ><i
-        class="text-gray-200 hover:text-white fab text-xl p-2 fa-twitter"
+        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-twitter"
       /></a
     >
     <a href="https://github.com/r0zar"
-      ><i class="text-gray-200 hover:text-white fab text-xl p-2 fa-github" /></a
+      ><i
+        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-github"
+      /></a
     >
     <a href="https://www.linkedin.com/in/rossragsdale/"
       ><i
-        class="text-gray-200 hover:text-white fab text-xl p-2 fa-linkedin-in"
+        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-linkedin-in"
       /></a
     >
     <a href="https://soundcloud.com/rozarbeats"
       ><i
-        class="text-gray-200 hover:text-white fab text-xl p-2 fa-soundcloud"
+        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-soundcloud"
       /></a
     >
   </div>
