@@ -94,14 +94,14 @@
     </div>
     <div class="flex flex-col md:flex-row hidden md:block -mx-2">
       <a
-        href="/"
-        class="text-gray-800 rounded hover:bg-gray-600 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
-        >Home</a
-      >
-      <a
         href="https://blog.rossragsdale.com"
         class="text-gray-800 rounded hover:bg-gray-600 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
         >Blog</a
+      >
+      <a
+        href="https://calendly.com/point-blank-dev"
+        class="text-gray-800 rounded hover:bg-gray-600 hover:text-gray-100 hover:font-medium py-2 px-2 md:mx-2"
+        >Calendly</a
       >
       <a
         href="https://pointblankdev.com"
@@ -117,8 +117,7 @@
     <p>I'm a freelance web developer.</p>
     <p>I work on complex problems to make them simple.</p>
     <p class="mt-4">
-      I founded Point Blank Dev to help others achieve their goals and building
-      amazing products.
+      I founded Point Blank Dev to help others achieve their goals and building amazing products.
     </p>
   </div>
   <section class="py-12">
@@ -127,9 +126,7 @@
       <div class="flex flex-col blur">
         {#each postList as post}
           <div class="w-full md:px-4 lg:px-6 py-5">
-            <div
-              class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer"
-            >
+            <div class="bg-white px-4 hover:shadow-md shadow rounded-lg cursor-pointer">
               <a href={post.url} class="px-4 py-4 md:px-10">
                 <h3 class="font-normal text-md">{post.title}</h3>
                 <p class="py-4 font-thin">
@@ -162,29 +159,19 @@
     style="background: #0099ff"
   >
     <a href="https://discord.gg/StNEj3trxt"
-      ><i
-        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-discord"
-      /></a
+      ><i class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-discord" /></a
     >
     <a href="https://twitter.com/lordrozar"
-      ><i
-        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-twitter"
-      /></a
+      ><i class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-twitter" /></a
     >
     <a href="https://github.com/r0zar"
-      ><i
-        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-github"
-      /></a
+      ><i class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-github" /></a
     >
     <a href="https://www.linkedin.com/in/rossragsdale/"
-      ><i
-        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-linkedin-in"
-      /></a
+      ><i class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-linkedin-in" /></a
     >
     <a href="https://soundcloud.com/rozarbeats"
-      ><i
-        class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-soundcloud"
-      /></a
+      ><i class="text-gray-200 hover:text-white text-xl p-2 mx-1 fab fa-soundcloud" /></a
     >
   </div>
 </footer>
